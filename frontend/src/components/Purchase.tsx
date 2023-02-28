@@ -1,6 +1,6 @@
 import styled from "styled-components/macro";
 import { IoEye, IoPencil, IoClose } from "react-icons/io5";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 
 interface Props {
@@ -10,13 +10,11 @@ interface Props {
 export default function Purchases(props:any) {
 
   const { id } = useParams();
-  const navigate = useNavigate();
 
   async function removePurchaseRegister(id:number) {
     try {
       await axios.delete(`${import.meta.env.VITE_URL}/purchases/${id}/delete`);
       alert("Registro removido!");
-      navigate(`/clients/${id}/purchases`);
     } catch (error) {
       alert(error);
     }
