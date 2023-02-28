@@ -64,10 +64,10 @@ export default function ClientePurchasesPage() {
         <IoArrowBackCircleSharp color="crimson" size={60} />
       </div>
       {
-        purchases && Object.keys(purchase).length === 0 ? Purchases(purchases, setChangeState, changeState) : ""
+        purchases && Object.keys(purchase).length === 0 ? <Purchases purchases={purchases} setChangeState={setChangeState} changeState={changeState}/> : ""
       }
       {
-        Object.keys(purchase).length !== 0 ? Purchases(purchase) : ""
+        Object.keys(purchase).length !== 0 ? <Purchases purchases={purchases} setChangeState={setChangeState} changeState={changeState}/> : ""
       }
     </Container>
   )

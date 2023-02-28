@@ -7,22 +7,22 @@ interface Props {
   wasPaid: boolean
 }
 
-export default function Purchases(props:any) {
+export default function Purchases({purchases, setChangeState, changeState}) {
 
   const { id } = useParams();
 
   async function removePurchaseRegister(id:number) {
     try {
       await axios.delete(`${import.meta.env.VITE_URL}/purchases/${id}/delete`);
-      window.location.reload();
       alert("Registro removido!");
+      setChangeState(changeState+1);
     } catch (error) {
       alert(error);
     }
   }
 
   return(
-    props.map((purchase, index) => 
+    purchases.map((purchase, index) => 
     <Container key={index} wasPaid={purchase.wasPaid}>
       <h1>Código: {purchase.id}</h1>
       <h1>Data: {(new Date(purchase.createdAt)).toLocaleDateString('pt-br')}</h1>
@@ -78,7 +78,7 @@ const Container = styled.div<Props>`
 
     justify-content: space-around;
   }
-  
+
   .view {
     position: absolute;
     top: 0;

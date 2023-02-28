@@ -14,7 +14,7 @@ export const Container = styled.div`
 
   form {
     height: 80vh;
-    width: 40%;
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,13 +31,19 @@ export const Container = styled.div`
     }
 
     .opcoes {
+      display: flex;
+      flex-wrap: wrap;
+      width: 90%;
+      min-height: 70%;
+      overflow-y: scroll;
+
       label {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        min-width: 240px;
-        min-height: 160px;
+        min-width: 180px;
+        min-height: 120px;
 
         white-space: nowrap;
         overflow: hidden;  
@@ -70,8 +76,6 @@ export const Container = styled.div`
     min-height: 120px;
     align-items: center;
     padding-left: 12px;
-
-    overflow-x: scroll;
   }
 
   .item {
@@ -101,5 +105,9 @@ export const Container = styled.div`
 
   button.cancel {
     background-color: crimson;
+  }
+
+  .amount {
+    
   }
 `
