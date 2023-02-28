@@ -38,6 +38,7 @@ export const Container = styled.div`
         align-items: center;
         min-width: 240px;
         min-height: 160px;
+
         white-space: nowrap;
         overflow: hidden;  
         text-overflow: ellipsis;

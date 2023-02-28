@@ -39,7 +39,6 @@ export default function PurchaseRegister() {
     items.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
   }
 
-
   function renderProducts() {
     return products.map((product,index) => 
         <label key={index}>
@@ -70,6 +69,7 @@ export default function PurchaseRegister() {
     }
     setTotal(soma);
   }
+
 
   const handleCheckboxChange = (event) => {
     const name = event.target.value;

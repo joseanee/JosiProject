@@ -78,7 +78,7 @@ const Container = styled.div<Props>`
 
     justify-content: space-around;
   }
-
+  
   .view {
     position: absolute;
     top: 0;
