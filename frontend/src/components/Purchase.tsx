@@ -15,6 +15,7 @@ export default function Purchases(props:any) {
     try {
       await axios.delete(`${import.meta.env.VITE_URL}/purchases/${id}/delete`);
       alert("Registro removido!");
+      location.reload();
     } catch (error) {
       alert(error);
     }
