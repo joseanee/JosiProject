@@ -14,6 +14,7 @@ import ClientePurchasesPage from "./pages/ClientePurchasesPage";
 import Payment from "./pages/Payment";
 import ClienteTransactions from "./pages/ClienteTransactions";
 import StockPage from "./pages/StockPage";
+import ProductUpdate from "./pages/ProductUpdate";
 
 export default function App(){
     const [info, setInfo] = useState();
@@ -38,6 +39,7 @@ export default function App(){
                     <Route path="/clients/update/:id" element={<ClienteUpdate />} />
                     <Route path="/products/add" element={<ProductRegister />} />
                     <Route path="/products" element={<ProductsPage />} />
+                    <Route path="/products/update/:id" element={<ProductUpdate />} />
                     <Route path="/purchases/:id" element={<PurchaseRegister />} />
                     <Route path="/relatorios" element={<StockPage />} />
                 </Routes>

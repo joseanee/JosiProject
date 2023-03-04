@@ -33,12 +33,11 @@ export default function ProductsPage() {
       }
 
       const { data:client } = await axios.get(`${import.meta.env.VITE_URL}/products?name=${nome}`);
-      console.log(client)
       const arr = [];
 
       arr.push(client);
 
-      setProduct(arr);
+      setProduct(...arr);
     } catch (error) {
       alert(error);
     }

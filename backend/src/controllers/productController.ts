@@ -18,9 +18,9 @@ export async function getProducts(req:Request, res:Response) {
   const { name }= req.query;
 
   if(name) {
-    const product = await productServices.getProduct(name.toString());
+    const products = await productServices.getProductsWithFilter(name.toString());
 
-    return res.status(200).send(product);
+    return res.status(200).send(products);
   }
 
   const products = await productServices.getProducts();
@@ -31,7 +31,23 @@ export async function getProducts(req:Request, res:Response) {
 export async function removeProduct(req:Request, res:Response) {
   const id = Number(req.params.id);
 
-  const products = await productServices.remove(id);
+  await productServices.remove(id);
 
-  return res.status(200).send(products);
+  return res.status(200).send('ok');
+}
+
+export async function getProductById(req:Request, res:Response) {
+  const id = Number(req.params.id);
+
+  const product = await productServices.findById(id);
+
+  return res.status(200).send(product);
+}
+
+export async function updateProduct(req:Request, res:Response) {
+  const data = req.body;
+
+  const product = await productServices.update(data);
+
+  return res.status(200).send(product);
 }

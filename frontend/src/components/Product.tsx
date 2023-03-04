@@ -20,7 +20,7 @@ export default function Produtos(props, setChangeState, changeState) {
     <Container key={index}>
       <h1>Nome: {produto.nome} ({produto.medida})</h1>
       <div className="options">
-        <Link to={`/clients/update/${produto.id}`}>
+        <Link to={`/products/update/${produto.id}`}>
           <IoBrush color="purple" size={20} cursor="pointer" />
         </Link>
         <IoClose color="red" size={20} cursor="pointer" onClick={() => deleteProduto(produto.id)}/>

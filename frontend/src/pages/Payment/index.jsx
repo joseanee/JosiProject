@@ -53,6 +53,7 @@ export default function Payment() {
     try {
       await axios.put(`${import.meta.env.VITE_URL}/purchases/${purchaseId}/update`,body);
       alert("Pagamento registrado!!");
+      navigate(-1);
     } catch (error) {
       alert("Falha ao registrar pagamento!");
     }
